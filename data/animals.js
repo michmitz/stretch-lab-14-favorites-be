@@ -1,6 +1,6 @@
 module.exports = [
   {
-    name: 'bessie',
+    strDrink: 'bessie',
     cool_factor: 3,
   },
   {
