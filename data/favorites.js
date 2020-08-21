@@ -1,18 +1,18 @@
 module.exports = [
   {
-    name: 'Margarita',
-    image: 'some image',
+    strdrink: 'Margarita',
+    strdrinkthumb: 'some image',
   },
   {
-    name: 'Blue Margarita',
-    image: 'some image'
+    strdrink: 'Blue Margarita',
+    strdrinkthumb: 'some image'
   },
   {
-    name: 'Tommy\'s Margarita',
-    image: 'some image'
+    strdrink: 'Tommy\'s Margarita',
+    strdrinkthumb: 'some strDrinkThumb'
   },
   {
-    name: 'Whitecap Margarita',
-    image: 'some image'
+    strdrink: 'Whitecap Margarita',
+    strdrinkthumb: 'some image'
   }
 ];

@@ -8,6 +8,11 @@ const app = require('../lib/app');
 const client = require('../lib/client');
 
 describe('app routes', () => {
+  const margarita = {
+    strdrink: 'Whitecap Margarita',
+    strdrinkthumb: 'https://www.thecocktaildb.com/images/media/drink/srpxxp1441209622.jpg'
+  };
+
   let token;
 
   beforeAll(async done => {
@@ -311,7 +316,7 @@ describe('app routes', () => {
           "dateModified": "2015-08-18 14:41:51"
         }
       ]
-    };
+    }
 
     const data = await fakeRequest(app)
       .get('/search?s=margarita')
@@ -322,4 +327,24 @@ describe('app routes', () => {
 
     done();
   });
+
+  test('creates a new favorite on POST', async(done) => {
+    const expectation = {
+      ...margarita,
+      id: 5,
+      user_id: 2
+    };
+
+    const data = await fakeRequest(app)
+      .post('/api/favorites')
+      .set('Authorization', token)
+      .send(margarita)
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    expect(data.body).toEqual(expectation);
+
+    done();
+  });
+
 });

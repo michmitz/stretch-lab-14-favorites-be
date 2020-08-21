@@ -18,9 +18,9 @@ async function run() {
                     hash VARCHAR(512) NOT NULL
                 );           
                 CREATE TABLE favorites (
-                    idDrink SERIAL PRIMARY KEY NOT NULL,
-                    strDrink VARCHAR(512) NOT NULL,
-                    strDrinkThumb VARCHAR(512) NOT NULL,
+                    id SERIAL PRIMARY KEY NOT NULL,
+                    strdrink VARCHAR(512) NOT NULL,
+                    strdrinkthumb VARCHAR(512) NOT NULL,
                     user_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);
