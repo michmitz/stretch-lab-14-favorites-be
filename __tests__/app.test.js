@@ -347,4 +347,22 @@ describe('app routes', () => {
     done();
   });
 
+  test('gets all favorites for a user on GET', async(done) => {
+    const expectation = [{
+      ...margarita,
+      id: 5,
+      user_id: 2
+    }];
+
+    const data = await fakeRequest(app)
+      .get('/api/favorites')
+      .set('Authorization', token)
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    expect(data.body).toEqual(expectation);
+
+    done();
+  });
+
 });
